@@ -8,7 +8,7 @@
 \usepackage{color}
 \usepackage{fancyhdr}
 \usepackage{lastpage}
-%\usepackage{caption}
+\usepackage[labelformat=empty,labelsep=none]{caption}
 
 \if0
 \pagestyle{fancy}
@@ -291,6 +291,67 @@
 			\{1, 4, 8, 12\}
 	\end{itemize}
  \item[3]  \mbox{} \\
+ %%解いた
+	\begin{itemize}
+		\item $Z_{12}$ \\
+			\begin{itemize}
+				\item[(i)] 
+					\{1,5,7,11\}
+				\item[(ii)]
+ 					\begin{table}[!h]
+						\begin{center}
+							\begin{tabular}{c|c c c c}
+						 		   &  1 &  5 &  7 & 11 \\ \hline
+							 	 1 &  1 &  5 &  7 & 11 \\
+								 5 &  5 &  1 & 11 &  7 \\
+							 	 7 &  7 & 11 &  1 &  5 \\
+								11 & 11 &  7 &  5 &  1 \\
+							\end{tabular}
+						\end{center}
+					\end{table}
+				\item[(iii)] 
+					\begin{itemize}
+						\item $1$ のとき : $\{1\}$
+						\item $5$ のとき : $\{5, 1\}$
+						\item $7$ のとき : $\{7, 1\}$
+						\item $11$ のとき : $\{11, 1\}$
+					\end{itemize}
+			\end{itemize}
+		\item $Z_{14}$ \\
+			\begin{itemize}
+				\item[(i)]
+					\{1, 3, 5, 9, 11, 13\} 
+				\item[(ii)] 
+ 					\begin{table}[!h]
+						\begin{center}
+							\begin{tabular}{c|c c c c c c}
+								   &  1 &  3 &  5 &  9 & 11 & 13 \\ \hline
+								 1 &  1 &  3 &  5 &  9 & 11 & 13 \\
+								 3 &  3 &  9 &  1 & 13 &  5 & 11 \\
+								 5 &  5 &  1 & 11 &  3 & 13 &  9 \\
+								 9 &  9 & 13 &  3 & 11 &  1 &  5 \\
+								11 & 11 &  5 & 13 &  1 &  9 &  3 \\
+								13 & 13 & 11 &  9 &  5 &  3 &  1 \\
+							\end{tabular}
+						\end{center}
+					\end{table}
+				\item[(iii)] 
+					\begin{itemize}
+						\item $1$  のとき : $\{1\}$
+								($\because a = 1, a^2 = 1, a^3 = 1 \cdots$)
+						\item $3$  のとき : $\{3, 9, 13, 11, 5, 1\}$
+								($\because a = 3, a^2 = 9, a^3 = 13, a^4 = 11, a^5 = 5, a^6 = 1, a^7 =  3, a^8 = 9, a^9 =　13, a^{10} = 11, a^{11} = 5, a^{12} = 1  \cdots$)
+						\item $5$  のとき : $\{5, 11, 13, 9, 3, 1\}$
+								($\because a = 5, a^2 = 11, a^3 = 13, a^4 = 9, a^5 = 3, a^6 = 1, a^7 = 5, a^8 = 11, a^9 =　13, a^{10} = 9, a^{11} = 3, a^{12} = 1 \cdots$)
+						\item $9$  のとき : $\{9, 11, 1\}$
+								($\because a = 9, a^2 = 11, a^3 = 1, a^4 = 9, a^5 = 11, a^6 = 1 \cdots$) 
+						\item $11$ のとき : $\{11, 9, 1\}$
+								($\because a = 11, a^2 = 9, a^3 = 1, a^4 =11, a^5 = 9, a^6 = 1 \cdots$) 
+						\item $13$ のとき : $\{13, 1\}$
+								($\because a = 13, a^2 = 1, a^3 = 13, a^4 = 1 \cdots$)
+					\end{itemize}
+			\end{itemize}
+	\end{itemize}
  \item[4]  \mbox{} \\
  \item[5]  \mbox{} \\
  \item[6]  \mbox{} \\
