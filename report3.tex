@@ -170,41 +170,37 @@
  \item[6]  \mbox{} \\
  %%reduce
  \item[7]  \mbox{} \\
- %%わからんーーmath-nakagawaおせーて。あのね、さいごどうすればいいかわからん
- \begin{align*}
-  \begin{cases}
-  x \equiv c_1 \pmod{2} & \\
-  x \equiv c_2 \pmod{3} & \\
-  x \equiv c_3 \pmod{5} & \\
-  x \equiv c_4 \pmod{7}
-  \end{cases}
- \end{align*}
- より, 第 $1$ 式を満たす整数は,
- \[ x = c_1 + 2r~ (A) \]
- の形である. これが第 $2$ 式を満たすように $r$ を定める. \\
- $(A)$ を第 $2$ 式に代入すると,
- \[ c_1 + 2r \equiv c_2 \pmod{3} \] 
- であるから, そのためには $d_1 \equiv c_1 - c_2 \pmod{3}$ として $r$ を
- \[ 2r \equiv d_1~ (B) \]
- を満たすようにとればよい. $(2, 3) = 1$ より, $(B)$ の解は $3$ を法としてただ $1$ つ存在する. それを $r = r_1 \pmod{3}$ とすると, $(B)$ を満たす整数は,
- \[ r = r_1 + 3s \]
- の形である. したがってこれを $(A)$ に代入し, $x_2 = c_1 + 2r_1$ とおくと,
- \[ x = x_2 + 2 \times 3 \times s = x_2 + 6s \]
- が 第 $1$ 式, 第 $2$ 式をともに満たす整数となる. \\
- 次にこれが第 $3$ 式を満たすように $s$ を定める. そして上と同様にして 第 $1$ 式から第 $3$ 式までを満たす整数が, 
- \[ x = x_3 + 2 \times 3 \times 5 \times t = x_3 + 30t \] 
- の形でえられる. ($x_3 = x_2 + 6s_1$)\\
- さらにこれが第 $4$ 式を満たすように $t$ を定める. そして上と同様にして 第 $1$ 式から第 $4$ 式までを満たす整数が, 
- \[ x = x_4 + 2 \times 3 \times 5 \times 7 \times u = x_4 + 210u \] 
- の形でえられる. ($x_4 = x_3 + 30t_1$) \\
- したがって, 求める解は,
- \begin{align*}
- x
- &\equiv x_4 \pmod{210}\\
- &\equiv x_3 + 30t_1 \pmod{210} \\
- &\equiv x_2 + 6s_1 + 30t_1 \pmod{210} \\
- &\equiv c_1 + 2r_1 + 6s_1 + 30t_1 \pmod{210} \\
- \end{align*}
+ %%解いた
+	\begin{align*}
+		\begin{cases}
+			2 \cdot 3 \cdot 5 = 30 & \\
+			2 \cdot 3 \cdot 7 = 42 & \\
+			2 \cdot 5 \cdot 7 = 70 & \\
+			3 \cdot 5 \cdot 7 = 105 & \\
+			2 \cdot 3 \cdot 5 \cdot 7 = 210
+		\end{cases}
+	\end{align*}
+	より,
+	\begin{align*}
+		\begin{cases}
+			4 \cdot 30 = 120 \equiv 1 \pmod{7} & \\
+			3 \cdot 42 = 126 \equiv 1 \pmod{5} & \\
+			1 \cdot 70 = 70 \equiv 1 \pmod{3} & \\
+			1 \cdot 105 = 105 \equiv 1 \pmod{2}
+		\end{cases}
+	\end{align*}
+	となるから, $x' = 105c_1 + 70c_2 + 126c_3 + 120c_4$ は合同式
+	\begin{align*}
+		\begin{cases}
+			x \equiv c_1 \pmod{2} & \\
+			x \equiv c_2 \pmod{3} & \\
+			x \equiv c_3 \pmod{5} & \\
+			x \equiv c_4 \pmod{7}
+		\end{cases}
+	\end{align*}
+	の解の $1$ つである. よって,
+	\[ x' = 105c_1 + 70c_2 + 126c_3 + 120c_4 \pmod{210} \]
+	を満たすすべての $x$ は与合同式を満たす.
  \item[8]  \mbox{} \\
  \item[9]  \mbox{} \\
  \item[10]  \mbox{} \\
