@@ -8,7 +8,7 @@
 \usepackage{color}
 \usepackage{fancyhdr}
 \usepackage{lastpage}
-\usepackage{caption}
+%\usepackage{caption}
 
 \if0
 \pagestyle{fancy}
@@ -45,7 +45,25 @@
 \begin{enumerate}
  \item[1]  \mbox{} \\
  %%追加説明あり
- %%わからんからmath-nakagawa〜〜おせーて♡
+	$a = a_0 + a_1 \cdot 10 + \cdots + a_n \cdot 10^n$ を整数 $a > 0$ の10進数表示とする. \\
+	$10 \equiv 1 \pmod{3}$ より, $10^k \equiv 1 \pmod{3}$ が得られるから,
+	\[ a \equiv a_0 + a_1 + \cdots + a_n \pmod{3} \]
+	したがって, $a \equiv 0 \pmod{3} \Leftrightarrow a_0 + a_1 + \cdots + a_n \equiv 0 \pmod{3}$.
+ \item[1] 追加問題 \\
+	\begin{itemize}
+	 \item 7 の倍数 \\
+		$10^3 \equiv -1 \pmod{7}$ より, $10^{3k} \equiv {(-1)}^k \pmod{7}$ が得られるから,
+		\[ a \equiv a_0 a_1 a_2 - a_3 a_4 a_5 + a_6 a_7 a_8 - \cdots \pmod{7} \]
+		したがって, $a \equiv 0 \pmod{7} \Leftrightarrow a \equiv a_0 a_1 a_2 - a_3 a_4 a_5 + a_6 a_7 a_8 - \cdots \pmod{7}$.
+	 \item 13 の倍数 \\
+		$10^3 \equiv -1 \pmod{13}$ より, $10^{3k} \equiv {(-1)}^k\pmod{11}$ が得られるから,
+		\[ a \equiv a_0 a_1 a_2 - a_3 a_4 a_5 + a_6 a_7 a_8 - \cdots \pmod{11} \]
+		したがって, $a \equiv 0 \pmod{7} \Leftrightarrow a \equiv a_0 a_1 a_2 - a_3 a_4 a_5 + a_6 a_7 a_8 - \cdots \pmod{11}$.
+	 \item 37 の倍数 \\
+		$10^3 \equiv 1 \pmod{37}$ より, $10^{3k} \equiv 1 \pmod{37}$ が得られるから,
+		\[ a \equiv a_0 a_1 a_2 + a_3 a_4 a_5 + a_6 a_7 a_8 + \cdots \pmod{37} \]
+		したがって, $a \equiv 0 \pmod{37} \Leftrightarrow a \equiv a_0 a_1 a_2 + a_3 a_4 a_5 + a_6 a_7 a_8 + \cdots \pmod{37}$.
+	\end{itemize}
  \item[2]  \mbox{} \\
  %%解いた
  \begin{align*}
@@ -53,13 +71,13 @@
   & + 9 \times 12^{7} + 9 \times 12^{6} + 6 \times 12^{5} +3 \times 12^{4} \\
   & + 4 \times 12^{3} + 2 \times 12^{2} + 5 \times 12^{1} + 3 \\
  \end{align*}
- また, $12^{k} \equiv 1(mod 11)$ より
+ また, $12^{k} \equiv 1 \pmod{11}$ より
  \begin{align*}
  (42899634253)_{12}
  &\equiv 4 + 2 + 8 + 9 + 9 + 6 \\
- & + 3 + 4 + 2 + 5 +3 (mod~11) \\
+ & + 3 + 4 + 2 + 5 +3 \pmod{11} \\
  &\equiv 55 \\
- &\equiv 0 (mod~11) \\ 
+ &\equiv 0 \pmod{11} \\ 
  \end{align*}
  より, $(42899634253)_{12}$ は $(11)_{10}$ で割り切れる.
  \item[3]  \mbox{} \\
@@ -68,13 +86,13 @@
  (3A6F2B1)_{16} &= (3 \times 16^{6} + 10 \times 16^{5} + 6 \times 16^{4} \\
   & + 15 \times 16^{3} + 2 \times 16^{2} + 11 \times 16^{1} + 1)_{10}\\
  \end{align*}
- また, $(16)_{10}^{k} \equiv 1(mod 15)$ より
+ また, $(16)_{10}^{k} \equiv 1 \pmod{15}$ より
  \begin{align*}
  (3A6F2B1)_{16}
  &\equiv (3 + 10 +6 + 15 + 2 + 11 + 1)_{10} \\
  &\equiv (48)_{10} \\
- &\equiv (3)_{10} (mod~15) \\ 
- &\equiv (3)_{16} (mod~F) \\
+ &\equiv (3)_{10} \pmod{15} \\ 
+ &\equiv (3)_{16} \pmod{F} \\
  \end{align*}
  \item[4]  \mbox{} \\
  \item[5]  \mbox{} \\
@@ -84,6 +102,23 @@
  %%追加説明あり
  \item[9]  \mbox{} \\
  \item[10]  \mbox{} \\
+ \item[Option] $7$ の倍数の判定法の証明. \\
+	\begin{align*}
+		\begin{cases}
+		N = 10a + b & \\
+		M = a - 2b &
+		\end{cases}
+	\end{align*}
+	とすると,
+	\[ M \equiv 0 \pmod{7} \Leftrightarrow \exists k \in \mathbb{Z}~s.t.~a - 2b = 7k \]
+	のとき,
+	\begin{align*}
+		N &= 10(7k + 2b) + b\\
+		&= 7 \cdot 10k + 21b \\
+		&= 7(10k + 2b) \\
+		&\equiv 0 \pmod{7}
+	\end{align*}
+	より, $7|(a-2b)$, $7|(10a+b)$ となるので, 題意を満たす. 
 \end{enumerate}
 \pagebreak
 
@@ -95,26 +130,25 @@
  %%解いた
  $\left\{ 59, 162, -353, 107, 77, -50, 116 \right\}$ より,
  \begin{align*}
- 59 &\equiv 3 (mod~7) \\
- 162 &\equiv 2 (mod~7) \\
- -353 &\equiv 4 (mod~7) \\
- 107 &\equiv 2 (mod~7) \\
- 77 &\equiv 0 (mod~7) \\
- -50 &\equiv 6 (mod~7) \\
- 116 &\equiv 4 (mod~7) 
+ 59 &\equiv 3 \pmod{7} \\
+ 162 &\equiv 2 \pmod{7} \\
+ -353 &\equiv 4 \pmod{7} \\
+ 107 &\equiv 2 \pmod{7} \\
+ 77 &\equiv 0 \pmod{7} \\
+ -50 &\equiv 6 \pmod{7} \\
+ 116 &\equiv 4 \pmod{7} 
  \end{align*}
  より, $7$ を法とする\underline{完全代表系とはならない}.
  \item[3]  \mbox{} \\
  %%解いた
  $\left\{ -141, 65, 103, 70, -6, 199, 32 \right\}$ より,
  \begin{align*}
- -141 &\equiv 6 (mod~7) \\
- 65 &\equiv 2 (mod~7) \\
- 103 &\equiv 5 (mod~7) \\
- 70 &\equiv 0 (mod~7) \\
- -6 &\equiv 1 (mod~7) \\
- 199 &\equiv 3 (mod~7) \\
- 32 &\equiv 4 (mod~7) 
+ -141 &\equiv 6 \pmod{7} \\
+ 65 &\equiv 2 \pmod{7} \\
+ 103 &\equiv 5 \pmod{7} \\
+ 70 &\equiv 0 \pmod{7} \\
+ -6 &\equiv 1 \pmod{7} \\
+ 199 &\equiv 3 \pmod{7}
  \end{align*}
  より, $7$ を法とする\underline{完全代表系とはなる}.
  \item[4]  \mbox{} \\
@@ -137,20 +171,20 @@
  %%わからんーーmath-nakagawaおせーて。あのね、さいごどうすればいいかわからん
  \begin{align*}
   \begin{cases}
-  x \equiv c_1 (mod~2) & \\
-  x \equiv c_2 (mod~3) & \\
-  x \equiv c_3 (mod~5) & \\
-  x \equiv c_4 (mod~7)
+  x \equiv c_1 \pmod{2} & \\
+  x \equiv c_2 \pmod{3} & \\
+  x \equiv c_3 \pmod{5} & \\
+  x \equiv c_4 \pmod{7}
   \end{cases}
  \end{align*}
  より, 第 $1$ 式を満たす整数は,
  \[ x = c_1 + 2r~ (A) \]
  の形である. これが第 $2$ 式を満たすように $r$ を定める. \\
  $(A)$ を第 $2$ 式に代入すると,
- \[ c_1 + 2r \equiv c_2 (mod~3) \] 
- であるから, そのためには $d_1 \equiv c_1 - c_2 (mod~3)$ として $r$ を
+ \[ c_1 + 2r \equiv c_2 \pmod{3} \] 
+ であるから, そのためには $d_1 \equiv c_1 - c_2 \pmod{3}$ として $r$ を
  \[ 2r \equiv d_1~ (B) \]
- を満たすようにとればよい. $(2, 3) = 1$ より, $(B)$ の解は $3$ を法としてただ $1$ つ存在する. それを $r = r_1 (mod~3)$ とすると, $(B)$ を満たす整数は,
+ を満たすようにとればよい. $(2, 3) = 1$ より, $(B)$ の解は $3$ を法としてただ $1$ つ存在する. それを $r = r_1 \pmod{3}$ とすると, $(B)$ を満たす整数は,
  \[ r = r_1 + 3s \]
  の形である. したがってこれを $(A)$ に代入し, $x_2 = c_1 + 2r_1$ とおくと,
  \[ x = x_2 + 2 \times 3 \times s = x_2 + 6s \]
@@ -164,10 +198,10 @@
  したがって, 求める解は,
  \begin{align*}
  x
- &\equiv x_4 (mod~210)\\
- &\equiv x_3 + 30t_1 (mod~210) \\
- &\equiv x_2 + 6s_1 + 30t_1 (mod~210) \\
- &\equiv c_1 + 2r_1 + 6s_1 + 30t_1 (mod~210) \\
+ &\equiv x_4 \pmod{210}\\
+ &\equiv x_3 + 30t_1 \pmod{210} \\
+ &\equiv x_2 + 6s_1 + 30t_1 \pmod{210} \\
+ &\equiv c_1 + 2r_1 + 6s_1 + 30t_1 \pmod{210} \\
  \end{align*}
  \item[8]  \mbox{} \\
  \item[9]  \mbox{} \\
@@ -184,20 +218,20 @@
  \item[(i)]
  \begin{align*}
  3^{47} &\equiv (3^3)^{15} \times 3^2 \\
-      &\equiv 4^{15} \times 3^2 ~(\because 3^3 \equiv 27 \equiv 4 (mod~23) \mbox{より}) \\
+      &\equiv 4^{15} \times 3^2 ~(\because 3^3 \equiv 27 \equiv 4 \pmod{23} \mbox{より}) \\
       &\equiv (4^3)^5 \times 3^2 \\
-      &\equiv 18^5 \times 3^2 ~(\because 4^3 \equiv 64 \equiv 18 (mod~23) \mbox{より}) \\
-      &\equiv (-5)^5 \times 3^2 ~(\because 18 \equiv -5 (mod~23) \mbox{より}) \\
+      &\equiv 18^5 \times 3^2 ~(\because 4^3 \equiv 64 \equiv 18 \pmod{23} \mbox{より}) \\
+      &\equiv (-5)^5 \times 3^2 ~(\because 18 \equiv -5 \pmod{23} \mbox{より}) \\
       &\equiv \left\{(-5)^2 \right\}^2 \times (-5) \times 3^2 \\
-      &\equiv 2^2 \times (-5) \times 3^2 ~(\because (-5)^2 \equiv 25 \equiv 2 (mod~23) \mbox{より}) \\
+      &\equiv 2^2 \times (-5) \times 3^2 ~(\because (-5)^2 \equiv 25 \equiv 2 \pmod{23} \mbox{より}) \\
       &\equiv -19 \\
-      &\equiv 4 (mod~23)
+      &\equiv 4 \pmod{23}
  \end{align*}
  \item[(ii)]
  \begin{align*}
  7^{1000} &\equiv (7^2)^{500} \\
-      &\equiv 1^{500} ~(\because 7^2 \equiv 49 \equiv 1 (mod~24)\mbox{より}) \\
-      &\equiv 1 (mod~24)
+      &\equiv 1^{500} ~(\because 7^2 \equiv 49 \equiv 1 \pmod{24}\mbox{より}) \\
+      &\equiv 1 \pmod{24}
  \end{align*}
  \end{itemize}
  \item[2]  \mbox{} \\
