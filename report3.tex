@@ -162,10 +162,26 @@
  %%解いた
 	$a \equiv c \pmod{m} \Rightarrow f(a) \equiv f(c) \pmod{m}$
 	より, $c$ は $m$ を法としたとき, 完全剰余系 $0, 1, \cdots , m-1$ の中のいずれかである. 		また, $b, b+1, \cdots, b+m-1$ も $m$ を法とした完全剰余系であるので, この中で $m$ を法として　$c$ と合同なものが存在する. よってこのような値を $x$ とおくと, $f(x) \equiv 0 \pmod{m}$ を満たす. 
-\item[2]  \mbox{} \\
+ \item[2]  \mbox{} \\
  \item[3]  \mbox{} \\
- \item[4]  \mbox{} \\
+ \item[4]  資料のReduceコードを修正して計算結果を得た. \\
  %%reduce
+	\begin{itemize}
+		\item (入力ファイル)
+			\begin{verbatim}
+				in "linmod";
+
+				lin_mod_eq(16,1,23);
+				lin_mod_eq(6,15,21);
+				lin_mod_eq(218,33,601);
+
+				;end;
+			\end{verbatim}
+		\item (出力ファイル)
+			\begin{verbatim}
+
+			\end{verbatim}
+		\end{itemize}
  \item[5]  \mbox{} \\
  \item[6]  \mbox{} \\
  %%reduce
